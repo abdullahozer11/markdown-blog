@@ -9,6 +9,7 @@ import matter from 'gray-matter';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
+import ShareButtons from "@/components/ShareButtons";
 
 export default function BlogPost() {
     const [post, setPost] = useState({
@@ -121,6 +122,14 @@ export default function BlogPost() {
                                         className="prose dark:prose-invert prose-lg max-w-none"
                                         dangerouslySetInnerHTML={{__html: post.content}}
                                     />
+
+                                    {/* Share buttons */}
+                                    <div className="border-t border-gray-200 dark:border-gray-700 mt-8">
+                                        <ShareButtons
+                                            title={post.title}
+                                            tags={post.categories}
+                                        />
+                                    </div>
                                 </>
                             )}
                         </div>
