@@ -1,3 +1,11 @@
+---
+title: "How Phone Screen Profits Work"
+date: "2024-11-17"
+author: "Abdullah OZER"
+categories: ["Technology", "Mobile", "Business"]
+tags: ["phones", "repairs", "industry"]
+---
+
 # How the Telephone Industry Profits More from Replacement Screens Than Selling Phones
 
 ## Introduction

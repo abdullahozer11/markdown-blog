@@ -1,3 +1,11 @@
+---
+title: Phone Case Style
+author: "Abdullah OZER"
+date: 2024-11-17
+categories: ["Technology", "Mobile", "Design"]
+tags: ["phones"]
+---
+
 # How Personal Style is Reflected in Choices of Phone Cases
 
 ## Introduction
