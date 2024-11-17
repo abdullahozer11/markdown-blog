@@ -18,30 +18,8 @@ export default function Header() {
         <header className="relative py-6 border-b border-gray-200 dark:border-gray-700 mb-6 transition-colors duration-200">
             <div className="container mx-auto px-4">
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-                    My Blog
+                    MOBICHARM
                 </h1>
-                <nav>
-                    <ul className="flex justify-center gap-4 flex-wrap">
-                        <li>
-                            <Link
-                                href="/"
-                                className="text-gray-800 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded transition-colors duration-200"
-                            >
-                                Home
-                            </Link>
-                        </li>
-                        {blogs.map(({ id, title }) => (
-                            <li key={id}>
-                                <Link
-                                    href={`/blogs/${id}`}
-                                    className="text-gray-800 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded transition-colors duration-200"
-                                >
-                                    {title}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
             </div>
             <div className="absolute top-4 right-4">
                 <ThemeToggle />
