@@ -112,8 +112,6 @@ export default function BlogPost() {
                                                             })}
                                                         </time>
                                                     )}
-                                                    <span className="mx-2">•</span>
-                                                    <span>{post.readingTime} min read</span>
                                                 </div>
                                             </div>
                                         </div>
