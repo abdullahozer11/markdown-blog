@@ -1,9 +1,11 @@
 ---
-title: Phone Case Style
+title: "How Personal Style is Reflected in Phone Cases"
+description: "Discover how your choice of phone case reveals your personality, from minimalist designs to bold statements. Learn about different styles and what they say about you."
 author: "Abdullah OZER"
-date: 2024-11-17
-categories: ["Technology", "Mobile", "Design"]
-tags: ["phones"]
+date: "2024-11-17"
+lastModified: "2024-11-18"
+categories: ["Style", "Mobile", "Accessories"]
+coverImage: "/images/phone-cases-style.jpg"
 ---
 
 # How Personal Style is Reflected in Choices of Phone Cases

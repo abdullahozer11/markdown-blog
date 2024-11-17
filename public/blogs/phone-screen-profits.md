@@ -1,9 +1,12 @@
 ---
 title: "How Phone Screen Profits Work"
+description: "Read about how smartphone industry is optimizing their profits with replacement screens."
 date: "2024-11-17"
 author: "Abdullah OZER"
 categories: ["Technology", "Mobile", "Business"]
 tags: ["phones", "repairs", "industry"]
+lastModified: "2024-11-18"
+coverImage: "/images/phone-screen-profits.jpg"
 ---
 
 # How the Telephone Industry Profits More from Replacement Screens Than Selling Phones

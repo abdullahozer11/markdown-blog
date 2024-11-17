@@ -1,0 +1,6 @@
+# /public/robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://mobicharm.com/sitemap.xml
