@@ -25,7 +25,7 @@ export default function Header() {
                         <li>
                             <Link
                                 href="/"
-                                className="text-blue-600 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded transition-colors duration-200"
+                                className="text-gray-800 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded transition-colors duration-200"
                             >
                                 Home
                             </Link>
@@ -34,7 +34,7 @@ export default function Header() {
                             <li key={id}>
                                 <Link
                                     href={`/blogs/${id}`}
-                                    className="text-blue-600 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded transition-colors duration-200"
+                                    className="text-gray-800 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded transition-colors duration-200"
                                 >
                                     {title}
                                 </Link>

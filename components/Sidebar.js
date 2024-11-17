@@ -25,7 +25,7 @@ export default function Sidebar() {
                     <li key={post.id}>
                         <Link
                             href={`/blogs/${post.id}`}
-                            className="text-blue-600 dark:text-blue-400 hover:underline block py-1"
+                            className="text-gray-800 dark:text-blue-400 hover:underline block py-1"
                         >
                             {post.title}
                             <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -44,7 +44,7 @@ export default function Sidebar() {
                     <li key={category} className="flex items-center justify-between">
                         <Link
                             href={`/category/${encodeURIComponent(category)}`}
-                            className="text-blue-600 dark:text-blue-400 hover:underline"
+                            className="text-gray-800 dark:text-blue-400 hover:underline"
                         >
                             {category}
                         </Link>
