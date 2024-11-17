@@ -9,7 +9,6 @@ export default function Sidebar() {
         fetch('/api/get-blogs')
             .then(res => res.json())
             .then(data => {
-                // Set recent posts (last 5)
                 setRecentPosts(data.blogs.slice(0, 5));
                 setCategories(data.categories);
             })
@@ -17,35 +16,39 @@ export default function Sidebar() {
     }, []);
 
     return (
-        <aside className="p-4 bg-gray-100 rounded-md">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Recent Posts</h3>
+        <aside className="p-4 bg-gray-100 dark:bg-gray-800 rounded-md transition-colors duration-200">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                Recent Posts
+            </h3>
             <ul className="space-y-2">
                 {recentPosts.map(post => (
                     <li key={post.id}>
-                        <Link 
+                        <Link
                             href={`/blogs/${post.id}`}
-                            className="text-blue-500 hover:underline block py-1"
+                            className="text-blue-600 dark:text-blue-400 hover:underline block py-1"
                         >
                             {post.title}
-                            <div className="text-sm text-gray-500">
+                            <div className="text-sm text-gray-500 dark:text-gray-400">
                                 {new Date(post.date).toLocaleDateString()} • {post.readingTime} min read
                             </div>
                         </Link>
                     </li>
                 ))}
             </ul>
-            
-            <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-4">Categories</h3>
+
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">
+                Categories
+            </h3>
             <ul className="space-y-2">
                 {Object.entries(categories).map(([category, posts]) => (
                     <li key={category} className="flex items-center justify-between">
-                        <Link 
+                        <Link
                             href={`/category/${encodeURIComponent(category)}`}
-                            className="text-blue-500 hover:underline"
+                            className="text-blue-600 dark:text-blue-400 hover:underline"
                         >
                             {category}
                         </Link>
-                        <span className="text-sm text-gray-500">
+                        <span className="text-sm text-gray-500 dark:text-gray-400">
                             ({posts.length})
                         </span>
                     </li>
