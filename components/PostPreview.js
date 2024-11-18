@@ -2,8 +2,30 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import CategoryTag from "@/components/CategoryTag";
+import { marked } from 'marked';
+import matter from 'gray-matter';
 
 export default function PostPreview({post}) {
+  const getPreviewText = (text) => {
+    const { content } = matter(text);
+    const parsedContent = marked(content)
+        .replace(/<[^>]*>/g, '')     // Remove HTML tags
+        .replace(/&quot;/g, '"')     // Replace HTML quotes
+        .replace(/&apos;/g, "'")     // Replace HTML apostrophes
+        .replace(/&amp;/g, '&')      // Replace HTML ampersands
+        .replace(/&#39;/g, "'")      // Replace HTML single quotes
+        .replace(/&lt;/g, '<')       // Replace HTML less than
+        .replace(/&gt;/g, '>')       // Replace HTML greater than
+        .split('. ')
+        .slice(0, 3)
+        .join('. ')
+        .trim() + '.';
+
+    return parsedContent;
+  };
+
+  const cleanPreview = post.preview ? getPreviewText(post.preview) : '';
+
   return (
     <article className="mb-12 group">
       <div className="flex items-center gap-3 mb-4">
@@ -49,7 +71,7 @@ export default function PostPreview({post}) {
           {post.title}
         </h2>
         <p className="text-xl leading-relaxed text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 font-serif">
-          {post.preview}
+          {cleanPreview}
         </p>
       </Link>
 
