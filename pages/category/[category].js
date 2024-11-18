@@ -28,7 +28,7 @@ export default function CategoryPage() {
     }, [category]);
 
     return (
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="container mx-auto px-4 lg:px-8 max-w-screen-xl">
             <Header />
             <main className="flex flex-col lg:flex-row gap-8 max-w-screen-xl mx-auto">
                 <section className="lg:w-3/4 w-full">

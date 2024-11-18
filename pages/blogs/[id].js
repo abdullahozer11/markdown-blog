@@ -67,7 +67,7 @@ export default function BlogPost() {
                 tags={post.categories}
                 canonicalUrl={`${process.env.NEXT_PUBLIC_SITE_URL}/blogs/${id}`}
             />
-            <div className="container mx-auto px-4 lg:px-8">
+            <div className="container mx-auto px-4 lg:px-8 max-w-screen-xl">
                 <Header/>
                 <main className="flex flex-col lg:flex-row gap-8 max-w-screen-xl mx-auto">
                     <article className="lg:w-3/4 w-full">

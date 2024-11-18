@@ -8,7 +8,7 @@ export default function Header() {
     return (
         <header className="border-b border-gray-200 dark:border-gray-700 mb-6 transition-colors duration-200">
             <div className="container mx-auto px-4">
-                <div className="flex items-center justify-between py-3 lg:py-6">
+                <div className="flex items-center justify-around py-3 lg:py-6">
                     {/* Logo container */}
                     <div className="w-24 sm:w-32 lg:w-56">
                         <Link href="/">
