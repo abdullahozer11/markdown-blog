@@ -8,7 +8,7 @@ export default function Header() {
             <div className="navbar bg-base-100">
                 <div className="navbar-center">
                     <Link href="/" className="btn btn-ghost text-5xl normal-case">
-                        MOBICHARM
+                        MOBICHARM BLOG
                     </Link>
                 </div>
                 <div className="navbar-end">
