@@ -1,9 +1,10 @@
 // pages/_app.js
 
 import "@/styles/globals.css";
-import { useEffect } from 'react';
+import {useEffect} from 'react';
+import Layout from "@/components/Layout";
 
-export default function App({ Component, pageProps }) {
+export default function App({Component, pageProps}) {
     useEffect(() => {
         // Apply saved theme and font on initial page load
         const savedTheme = localStorage.getItem('theme');
@@ -15,10 +16,10 @@ export default function App({ Component, pageProps }) {
 
         if (savedFont) {
             const fonts = [
-                { value: 'inter', className: 'font-sans' },
-                { value: 'merriweather', className: 'font-serif' },
-                { value: 'roboto-mono', className: 'font-mono' },
-                { value: 'playfair', className: 'font-serif' },
+                {value: 'inter', className: 'font-sans'},
+                {value: 'merriweather', className: 'font-serif'},
+                {value: 'roboto-mono', className: 'font-mono'},
+                {value: 'playfair', className: 'font-serif'},
             ];
 
             document.documentElement.classList.remove(
@@ -34,7 +35,9 @@ export default function App({ Component, pageProps }) {
 
     return (
         <div className="min-h-screen bg-base-neutral transition-colors duration-200">
-            <Component {...pageProps} />
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </div>
     );
 }
