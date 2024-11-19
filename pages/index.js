@@ -6,7 +6,7 @@ import PostPreview from "@/components/PostPreview";
 export default function Home() {
     const [blogPosts, setBlogPosts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [setError] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         setIsLoading(true);
