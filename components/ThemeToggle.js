@@ -1,24 +1,61 @@
 // components/ThemeToggle.js
-import {useTheme} from "@/contexts/ThemeContext";
 
 export default function ThemeToggle() {
-    const { theme, toggleTheme } = useTheme();
-
     return (
-        <button
-            onClick={toggleTheme}
-            className="p-1.5 sm:p-2 lg:p-3 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
-            aria-label="Toggle theme"
-        >
-            {theme === 'light' ? (
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        <div className="dropdown mb-72">
+            <div tabIndex={0} role="button" className="btn m-1">
+                Theme
+                <svg
+                    width="12px"
+                    height="12px"
+                    className="inline-block h-2 w-2 fill-current opacity-60"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 2048 2048">
+                    <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
                 </svg>
-            ) : (
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-            )}
-        </button>
+            </div>
+            <ul tabIndex={0} className="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+                <li>
+                    <input
+                        type="radio"
+                        name="theme-dropdown"
+                        className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                        aria-label="Default"
+                        value="default" />
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        name="theme-dropdown"
+                        className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                        aria-label="Retro"
+                        value="retro" />
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        name="theme-dropdown"
+                        className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                        aria-label="Cyberpunk"
+                        value="cyberpunk" />
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        name="theme-dropdown"
+                        className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                        aria-label="Valentine"
+                        value="valentine" />
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        name="theme-dropdown"
+                        className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                        aria-label="Aqua"
+                        value="aqua" />
+                </li>
+            </ul>
+        </div>
     );
 }

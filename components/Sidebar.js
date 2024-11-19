@@ -16,44 +16,49 @@ export default function Sidebar() {
     }, []);
 
     return (
-        <aside className="p-4 bg-gray-100 dark:bg-gray-800 rounded-md transition-colors duration-200">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                Recent Posts
-            </h3>
-            <ul className="space-y-2">
-                {recentPosts.map(post => (
-                    <li key={post.id}>
-                        <Link
-                            href={`/blogs/${post.id}`}
-                            className="text-gray-800 dark:text-blue-400 hover:underline block py-1"
-                        >
-                            {post.title}
-                            <div className="text-sm text-gray-500 dark:text-gray-400">
-                                {new Date(post.date).toLocaleDateString()} • {post.readingTime} min read
-                            </div>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+        <aside className="card bg-base-200">
+            <div className="card-body p-4">
+                <div className="mb-6">
+                    <h3 className="card-title text-xl mb-4">
+                        Recent Posts
+                    </h3>
+                    <ul className="menu bg-base-200 rounded-box">
+                        {recentPosts.map(post => (
+                            <li key={post.id}>
+                                <Link href={`/blogs/${post.id}`} className="hover:bg-base-300">
+                                    <div>
+                                        <span className="block">{post.title}</span>
+                                        <span className="text-sm opacity-70">
+                      {new Date(post.date).toLocaleDateString()} • {post.readingTime} min read
+                    </span>
+                                    </div>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">
-                Categories
-            </h3>
-            <ul className="space-y-2">
-                {Object.entries(categories).map(([category, posts]) => (
-                    <li key={category} className="flex items-center justify-between">
-                        <Link
-                            href={`/category/${encodeURIComponent(category)}`}
-                            className="text-gray-800 dark:text-blue-400 hover:underline"
-                        >
-                            {category}
-                        </Link>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">
-                            ({posts.length})
-                        </span>
-                    </li>
-                ))}
-            </ul>
+                <div>
+                    <h3 className="card-title text-xl mb-4">
+                        Categories
+                    </h3>
+                    <ul className="menu bg-base-200 rounded-box">
+                        {Object.entries(categories).map(([category, posts]) => (
+                            <li key={category}>
+                                <Link
+                                    href={`/category/${encodeURIComponent(category)}`}
+                                    className="flex justify-between hover:bg-base-300"
+                                >
+                                    <span>{category}</span>
+                                    <span className="badge badge-neutral">
+                    {posts.length}
+                  </span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </aside>
     );
 }
