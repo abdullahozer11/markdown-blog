@@ -1,7 +1,9 @@
-import {useState} from "react";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function FontSelector() {
     const [selectedFont, setSelectedFont] = useState('inter');
+    const router = useRouter();
 
     const fonts = [
         { name: 'Inter', value: 'inter', className: 'font-sans' },
@@ -10,13 +12,46 @@ export default function FontSelector() {
         { name: 'Playfair Display', value: 'playfair', className: 'font-serif' },
     ];
 
-    const handleFontChange = (fontValue) => {
-        setSelectedFont(fontValue);
+    useEffect(() => {
+        // Initialize font from localStorage on component mount
+        const savedFont = localStorage.getItem('selectedFont') || 'inter';
+        setSelectedFont(savedFont);
+        applyFont(savedFont);
+    }, []);
+
+    useEffect(() => {
+        // Handle font persistence during route changes
+        const handleRouteChange = () => {
+            const currentFont = localStorage.getItem('selectedFont');
+            if (currentFont) {
+                applyFont(currentFont);
+            }
+        };
+
+        // Subscribe to router events
+        router.events.on('routeChangeComplete', handleRouteChange);
+
+        return () => {
+            // Cleanup subscription
+            router.events.off('routeChangeComplete', handleRouteChange);
+        };
+    }, [router]);
+
+    const applyFont = (fontValue) => {
+        // Remove all font classes first
         document.documentElement.classList.remove(...fonts.map(f => f.className));
+
+        // Apply the new font class
         const newFont = fonts.find(f => f.value === fontValue);
         if (newFont) {
             document.documentElement.classList.add(newFont.className);
         }
+    };
+
+    const handleFontChange = (fontValue) => {
+        setSelectedFont(fontValue);
+        localStorage.setItem('selectedFont', fontValue);
+        applyFont(fontValue);
     };
 
     return (
