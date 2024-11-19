@@ -8,7 +8,6 @@ export default function FontSelector() {
         { name: 'Merriweather', value: 'merriweather', className: 'font-serif' },
         { name: 'Roboto Mono', value: 'roboto-mono', className: 'font-mono' },
         { name: 'Playfair Display', value: 'playfair', className: 'font-serif' },
-        { name: 'Open Sans', value: 'open-sans', className: 'font-sans' }
     ];
 
     const handleFontChange = (fontValue) => {
