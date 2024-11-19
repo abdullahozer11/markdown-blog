@@ -1,6 +1,7 @@
 // components/Header.js
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
+import FontSelector from './FontSelector';
 
 export default function Header() {
     return (
@@ -12,8 +13,9 @@ export default function Header() {
                     </Link>
                 </div>
                 <div className="navbar-end">
-                    <div className="dropdown dropdown-end">
-                        <ThemeToggle/>
+                    <div className="flex gap-2">
+                        <FontSelector />
+                        <ThemeToggle />
                     </div>
                 </div>
             </div>

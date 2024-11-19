@@ -7,6 +7,15 @@ module.exports = {
         require('@tailwindcss/typography'),
         require('daisyui'),
     ],
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                serif: ['Merriweather', 'ui-serif', 'Georgia'],
+                mono: ['Roboto Mono', 'ui-monospace', 'monospace'],
+            }
+        }
+    },
     variants: {
     },
     daisyui: {
