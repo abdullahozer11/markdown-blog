@@ -76,7 +76,7 @@ export default function AuthorPage() {
                                     <div className="hero-content text-center">
                                         <div>
                                             <h2 className="text-xl font-bold">No stories published yet</h2>
-                                            <p className="mt-2 opacity-75">This author hasn't published any stories.</p>
+                                            <p className="mt-2 opacity-75">This author hasn&apos;t published any stories.</p>
                                         </div>
                                     </div>
                                 </div>
