@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import { useRouter } from 'next/router'
 
 const themes = [
     "default",
@@ -37,6 +38,40 @@ const themes = [
 ];
 
 export default function ThemeToggle() {
+    const [selectedTheme, setSelectedTheme] = useState('');
+    const router = useRouter();
+
+    useEffect(() => {
+        // Get theme from localStorage on initial load
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setSelectedTheme(savedTheme);
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }, []);
+
+    useEffect(() => {
+        // Handle theme persistence during route changes
+        const handleRouteChange = () => {
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme) {
+                document.documentElement.setAttribute('data-theme', currentTheme);
+            }
+        };
+
+        // Subscribe to router events
+        router.events.on('routeChangeComplete', handleRouteChange);
+
+        return () => {
+            // Cleanup subscription
+            router.events.off('routeChangeComplete', handleRouteChange);
+        };
+    }, [router]);
+
+    const handleThemeChange = (theme) => {
+        setSelectedTheme(theme);
+        localStorage.setItem('theme', theme);
+        document.documentElement.setAttribute('data-theme', theme);
+    };
+
     return (
         <div className="dropdown">
             <div tabIndex={0} role="button" className="btn m-1">
@@ -60,6 +95,8 @@ export default function ThemeToggle() {
                             className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                             aria-label={theme.charAt(0).toUpperCase() + theme.slice(1)}
                             value={theme}
+                            checked={selectedTheme === theme}
+                            onChange={() => handleThemeChange(theme)}
                         />
                     </li>
                 ))}
