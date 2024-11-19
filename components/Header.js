@@ -5,20 +5,15 @@ import FontSelector from './FontSelector';
 
 export default function Header() {
     return (
-        <header className="border-b border-base-300 h-80">
-            <div className="navbar bg-base-100">
-                <div className="navbar-center">
-                    <Link href="/" className="btn btn-ghost text-5xl normal-case">
-                        MOBICHARM BLOG
-                    </Link>
-                </div>
-                <div className="navbar-end">
-                    <div className="flex gap-2">
-                        <FontSelector />
-                        <ThemeToggle />
-                    </div>
-                </div>
+        <div className="navbar bg-base-100 h-40">
+            <div className="navbar-start">
+                <a className="btn btn-ghost text-xl lg:text-4xl ">MobiCharm</a>
             </div>
-        </header>
+
+            <div className="navbar-end">
+                <FontSelector/>
+                <ThemeToggle/>
+            </div>
+        </div>
     );
 }

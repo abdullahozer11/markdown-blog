@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const FontSelector = () => {
+export default function FontSelector() {
     const [selectedFont, setSelectedFont] = useState('inter');
 
     const fonts = [
@@ -21,7 +21,7 @@ const FontSelector = () => {
     };
 
     return (
-        <div className="dropdown mb-72">
+        <div className="dropdown">
             <div tabIndex={0} role="button" className="btn m-1">
                 Font
                 <svg
@@ -52,5 +52,3 @@ const FontSelector = () => {
         </div>
     );
 };
-
-export default FontSelector;
